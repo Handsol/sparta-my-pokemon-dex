@@ -12,7 +12,7 @@ const Dex = () => {
           navigate("/");
         }}
       >
-        Dex로 이동
+        홈으로
       </button>
     </div>
   );

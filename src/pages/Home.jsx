@@ -12,7 +12,7 @@ const Home = () => {
           navigate("/dex");
         }}
       >
-        Dex로 이동
+        포켓몬 도감 시작하기
       </button>
     </div>
   );
