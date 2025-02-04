@@ -1,8 +1,13 @@
 import React from "react";
 import styled from "styled-components";
+import PokemonCard from "./PokemonCard";
 
 const PokemonList = () => {
-  return <PokemonListContainer></PokemonListContainer>;
+  return (
+    <PokemonListContainer>
+      <PokemonCard />
+    </PokemonListContainer>
+  );
 };
 
 export default PokemonList;
@@ -12,10 +17,10 @@ const PokemonListContainer = styled.div`
   grid-template-columns: repeat(6, 1fr);
   gap: 10px;
 
-  height: 200px;
-  border: 1px solid gray;
+  height: 100%;
+  border: 1px solid #e2e2e2;
   border-radius: 10px;
   margin-top: 10px;
 
-  background-color: white;
+  background-color: #f1f3f5;
 `;

@@ -18,10 +18,10 @@ const DashboardContainer = styled.div`
   justify-content: flex-start;
 
   height: 200px;
-  border: 1px solid gray;
+  border: 1px solid #e2e2e2;
   border-radius: 10px;
 
-  background-color: white;
+  background-color: #f1f3f5;
 `;
 
 const DashboardTitle = styled.h1`
@@ -40,6 +40,4 @@ const DashboardContent = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
-  background-color: #3333;
 `;
