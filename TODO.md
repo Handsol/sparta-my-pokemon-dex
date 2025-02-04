@@ -9,7 +9,7 @@
 
 - [ ] 기본 컴포넌트 구성
 
-  - [ ] Dashboard 기본 UI 작성, 스타일 추가
+  - [v] Dashboard 기본 UI 작성, 스타일 추가
   - [ ] PokemonList 기본 UI 작성, 스타일 추가
   - [ ] PokemonCard 기본 UI 작성, 스타일 추가
 

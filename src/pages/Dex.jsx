@@ -1,11 +1,13 @@
 import React from "react";
 import Dashboard from "../components/Dashboard";
 import styled from "styled-components";
+import PokemonList from "../components/PokemonList";
 
 const Dex = () => {
   return (
     <DexContainer>
       <Dashboard />
+      <PokemonList />
     </DexContainer>
   );
 };
