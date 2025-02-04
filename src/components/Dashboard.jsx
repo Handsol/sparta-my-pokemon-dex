@@ -17,9 +17,12 @@ const DashboardContainer = styled.div`
   flex-direction: column;
   justify-content: flex-start;
 
+  width: 100%;
+  max-width: 1200px;
   height: 200px;
   border: 1px solid #e2e2e2;
   border-radius: 10px;
+  margin: 0 auto;
 
   background-color: #f1f3f5;
 `;

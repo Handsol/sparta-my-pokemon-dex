@@ -15,10 +15,16 @@ const Dex = () => {
 export default Dex;
 
 const DexContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  gap: 20px;
   margin: 0;
-  padding: 10px;
+  padding: 20px;
 
   background-color: #ffffcc;
-  height: 100vh;
+  min-height: 500px;
   width: 100vw;
 `;

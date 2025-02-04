@@ -7,17 +7,17 @@
   - [v] Home.jsx 에 "포켓몬 도감 시작하기" 버튼 추가
   - [v] 버튼 클릭 시 도감페이지(/dex)로 이동하게 구성
 
-- [ ] 기본 컴포넌트 구성
+- [v] 기본 컴포넌트 구성
 
   - [v] Dashboard 기본 UI 작성, 스타일 추가
-  - [ ] PokemonList 기본 UI 작성, 스타일 추가
-  - [ ] PokemonCard 기본 UI 작성, 스타일 추가
+  - [v] PokemonList 기본 UI 작성, 스타일 추가
+  - [v] PokemonCard 기본 UI 작성, 스타일 추가
 
-- [ ] 포켓몬 리스트 출력
+- [v] 포켓몬 리스트 출력
 
-  - [ ] MOCK_DATA에서 데이터 가져오기
-  - [ ] DATA를 PokemonList에 전달
-  - [ ] 포켓몬 리스트를 PokemonCard 형태로 구현
+  - [v] MOCK_DATA에서 데이터 가져오기
+  - [v] DATA를 PokemonList에 전달
+  - [v] 포켓몬 리스트를 PokemonCard 형태로 구현
 
 - [ ] 포켓몬 선택 기능 구현
 
