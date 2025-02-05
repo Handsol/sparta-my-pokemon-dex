@@ -21,9 +21,17 @@ const Dex = () => {
     });
   };
 
+  const RemoveMyPokemon = (pokemon) => {
+    setMyPokemon((prevPokemon) => {
+      const newPokemon = prevPokemon.filter((item) => item !== pokemon);
+
+      return [...newPokemon, ...Array(6 - newPokemon.length).fill(null)];
+    });
+  };
+
   return (
     <DexContainer>
-      <Dashboard MyPokemon={MyPokemon} />
+      <Dashboard MyPokemon={MyPokemon} RemoveMyPokemon={RemoveMyPokemon} />
       <PokemonList AddMyPokemon={handleMyPokemon} />
     </DexContainer>
   );

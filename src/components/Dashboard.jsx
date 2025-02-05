@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-const Dashboard = ({ MyPokemon = [] }) => {
+const Dashboard = ({ MyPokemon = [], RemoveMyPokemon }) => {
   const filledSlots = [...MyPokemon, ...Array(6 - MyPokemon.length).fill(null)];
 
   return (
@@ -15,6 +15,9 @@ const Dashboard = ({ MyPokemon = [] }) => {
                 <PokemonImage src={pokemon.img_url} alt={pokemon.korean_name} />
                 <h2>{pokemon.korean_name}</h2>
                 <p>No. {String(pokemon.id).padStart(3, "0")}</p>
+                <RemovePokemonButton onClick={() => RemoveMyPokemon(pokemon)}>
+                  제거
+                </RemovePokemonButton>
               </div>
             ) : (
               <MonsterBallImage
@@ -96,6 +99,18 @@ const MonsterBallImage = styled.img`
 const PokemonImage = styled.img`
   max-width: 80px;
   height: auto;
+`;
+
+const RemovePokemonButton = styled.button`
+  background-color: #f1f3f5;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #ff9900;
+  }
 `;
 
 export default Dashboard;
