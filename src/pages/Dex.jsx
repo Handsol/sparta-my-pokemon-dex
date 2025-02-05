@@ -8,6 +8,15 @@ const Dex = () => {
 
   const handleMyPokemon = (pokemon) => {
     setMyPokemon((prevPokemon) => {
+      const alreadyExists = prevPokemon.some(
+        (item) => item && item.id === pokemon.id
+      );
+
+      if (alreadyExists) {
+        alert("이미 선택한 포켓몬입니다.");
+        return prevPokemon;
+      }
+
       const newPokemon = [...prevPokemon];
       const emptyPokemon = newPokemon.findIndex((item) => item === null);
 
