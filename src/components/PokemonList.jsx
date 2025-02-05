@@ -3,17 +3,21 @@ import styled from "styled-components";
 import PokemonCard from "./PokemonCard";
 import MOCK_DATA from "../data/MockData";
 
-const PokemonList = () => {
+const PokemonList = ({ AddMyPokemon }) => {
   return (
     <PokemonListContainer>
       {MOCK_DATA.map((pokemon) => (
-        <PokemonCard key={pokemon.id} pokemon={pokemon} />
+        <PokemonCard
+          key={pokemon.id}
+          pokemon={pokemon}
+          AddMyPokemon={AddMyPokemon}
+        />
       ))}
     </PokemonListContainer>
   );
 };
 
-export default PokemonList;
+// Styled-components
 
 const PokemonListContainer = styled.div`
   display: grid;
@@ -28,3 +32,5 @@ const PokemonListContainer = styled.div`
   border-radius: 10px;
   background-color: #f1f3f5;
 `;
+
+export default PokemonList;

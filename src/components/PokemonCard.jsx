@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-const PokemonCard = ({ pokemon }) => {
+const PokemonCard = ({ pokemon, AddMyPokemon }) => {
   const pokemonId = String(pokemon.id).padStart(3, "0");
 
   return (
@@ -9,12 +9,14 @@ const PokemonCard = ({ pokemon }) => {
       <PokemonImage src={pokemon.img_url} alt={pokemon.korean_name} />
       <h2>{pokemon.korean_name}</h2>
       <p>No. {pokemonId}</p>
-      <AddPokemonButton>추가</AddPokemonButton>
+      <AddPokemonButton onClick={() => AddMyPokemon(pokemon)}>
+        추가
+      </AddPokemonButton>
     </PokemonCardContainer>
   );
 };
 
-export default PokemonCard;
+// Styled-components
 
 const PokemonCardContainer = styled.div`
   background-color: white;
@@ -45,3 +47,5 @@ const AddPokemonButton = styled.button`
     background-color: #ff9900;
   }
 `;
+
+export default PokemonCard;
