@@ -1,0 +1,36 @@
+import React from "react";
+import styled from "styled-components";
+import PokemonCard from "./PokemonCard";
+import MOCK_DATA from "../data/MockData";
+
+const PokemonList = ({ AddMyPokemon }) => {
+  return (
+    <PokemonListContainer>
+      {MOCK_DATA.map((pokemon) => (
+        <PokemonCard
+          key={pokemon.id}
+          pokemon={pokemon}
+          AddMyPokemon={AddMyPokemon}
+        />
+      ))}
+    </PokemonListContainer>
+  );
+};
+
+// Styled-components
+
+const PokemonListContainer = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 20px;
+  width: 100%;
+  max-width: 1200px;
+  min-height: 500px;
+  padding: 20px;
+
+  border: 1px solid #e2e2e2;
+  border-radius: 10px;
+  background-color: #f1f3f5;
+`;
+
+export default PokemonList;
