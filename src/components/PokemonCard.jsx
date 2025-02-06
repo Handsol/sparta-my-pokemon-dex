@@ -1,14 +1,21 @@
-import React from "react";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
 const PokemonCard = ({ pokemon, AddMyPokemon }) => {
+  const navigate = useNavigate();
   const pokemonId = String(pokemon.id).padStart(3, "0");
+
+  const handleCardClick = () => {
+    navigate(`/pokemon/${pokemon.id}`);
+  };
 
   return (
     <PokemonCardContainer>
-      <PokemonImage src={pokemon.img_url} alt={pokemon.korean_name} />
-      <h2>{pokemon.korean_name}</h2>
-      <p>No. {pokemonId}</p>
+      <PokemonInfo onClick={handleCardClick}>
+        <PokemonImage src={pokemon.img_url} alt={pokemon.korean_name} />
+        <h2>{pokemon.korean_name}</h2>
+        <p>No. {pokemonId}</p>
+      </PokemonInfo>
       <AddPokemonButton onClick={() => AddMyPokemon(pokemon)}>
         추가
       </AddPokemonButton>
@@ -27,8 +34,11 @@ const PokemonCardContainer = styled.div`
   overflow: hidden;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   text-align: center;
-  cursor: pointer;
   transition: transform 0.2s, box-shadow 0.2s;
+`;
+
+const PokemonInfo = styled.div`
+  cursor: pointer;
 `;
 
 const PokemonImage = styled.img`
