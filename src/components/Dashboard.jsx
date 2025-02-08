@@ -1,32 +1,27 @@
-import React from "react";
 import styled from "styled-components";
+import DashboardCard from "./DashboardCard";
 
-const Dashboard = ({ MyPokemon = [], RemoveMyPokemon }) => {
-  const filledSlots = [...MyPokemon, ...Array(6 - MyPokemon.length).fill(null)];
-
+const Dashboard = ({ myPokemon, removeMyPokemon }) => {
   return (
     <DashboardContainer>
       <DashboardTitle>나만의 포켓몬</DashboardTitle>
       <DashboardContent>
-        {filledSlots.map((pokemon, index) => (
-          <PokemonItem key={index}>
-            {pokemon ? (
-              <div>
-                <PokemonImage src={pokemon.img_url} alt={pokemon.korean_name} />
-                <h2>{pokemon.korean_name}</h2>
-                <p>No. {String(pokemon.id).padStart(3, "0")}</p>
-                <RemovePokemonButton onClick={() => RemoveMyPokemon(pokemon)}>
-                  제거
-                </RemovePokemonButton>
-              </div>
-            ) : (
-              <MonsterBallImage
+        {Array.from({ length: 6 }, (_, i) => {
+          return myPokemon[i] ? (
+            <DashboardCard
+              key={i}
+              pokemon={myPokemon[i]}
+              removeMyPokemon={removeMyPokemon}
+            />
+          ) : (
+            <EmptyPokemon key={i}>
+              <img
                 src="https://react-6-pokemon.vercel.app/assets/pokeball-13iwdk7Y.png"
                 alt="빈 슬롯"
               />
-            )}
-          </PokemonItem>
-        ))}
+            </EmptyPokemon>
+          );
+        })}
       </DashboardContent>
     </DashboardContainer>
   );
@@ -65,51 +60,27 @@ const DashboardContent = styled.div`
   display: grid;
   grid-template-columns: repeat(6, 1fr);
 
-  gap: 10px;
+  gap: 20px;
 `;
 
-const PokemonItem = styled.div`
+const EmptyPokemon = styled.div`
   display: flex;
-  flex-direction: row;
-  align-items: center;
   justify-content: center;
-  text-align: center;
+  align-items: center;
+  width: 110px;
+  height: 180px;
 
-  width: 120px;
-  height: 170px;
-  padding: 10px;
   background-color: white;
-
-  overflow: hidden;
   border-radius: 10px;
   border: 1px solid #e2e2e2;
-
+  padding: 10px;
+  overflow: hidden;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-
-  cursor: pointer;
   transition: transform 0.2s, box-shadow 0.2s;
-`;
 
-const MonsterBallImage = styled.img`
-  max-width: 50px;
-  height: auto;
-  opacity: 0.6;
-`;
-
-const PokemonImage = styled.img`
-  max-width: 80px;
-  height: auto;
-`;
-
-const RemovePokemonButton = styled.button`
-  background-color: #f1f3f5;
-  border: none;
-  border-radius: 5px;
-  padding: 5px 10px;
-  cursor: pointer;
-
-  &:hover {
-    background-color: #ff9900;
+  img {
+    width: 50px;
+    height: auto;
   }
 `;
 

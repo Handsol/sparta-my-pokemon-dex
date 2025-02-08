@@ -46,11 +46,11 @@ const Dex = () => {
   return (
     <DexContainer>
       <Dashboard
-        alt={MOCK_DATA}
+        pokemonList={pokemonList}
         myPokemon={myPokemon}
         removeMyPokemon={removeMyPokemon}
       />
-      <PokemonList alt={MOCK_DATA} addMyPokemon={addMyPokemon} />
+      <PokemonList pokemonList={pokemonList} addMyPokemon={addMyPokemon} />
     </DexContainer>
   );
 };
