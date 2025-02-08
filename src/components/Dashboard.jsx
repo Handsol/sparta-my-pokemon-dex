@@ -1,7 +1,10 @@
-import styled from "styled-components";
+import { usePokemon } from "../context/PokemonContext";
 import DashboardCard from "./DashboardCard";
+import styled from "styled-components";
 
-const Dashboard = ({ myPokemon, removeMyPokemon }) => {
+const Dashboard = () => {
+  const { myPokemon, removeMyPokemon } = usePokemon();
+
   return (
     <DashboardContainer>
       <DashboardTitle>나만의 포켓몬</DashboardTitle>
