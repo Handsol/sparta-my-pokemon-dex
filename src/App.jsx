@@ -1,9 +1,13 @@
-import React from "react";
 import "./App.css";
+import { PokemonProvider } from "./context/PokemonContext";
 import Router from "./shared/Router";
 
 function App() {
-  return <Router />;
+  return (
+    <PokemonProvider>
+      <Router />
+    </PokemonProvider>
+  );
 }
 
 export default App;
