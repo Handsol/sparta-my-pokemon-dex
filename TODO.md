@@ -60,3 +60,9 @@
 - [ ] 검토 및 배포
   - [ ] UI의 전체적인 디자인 수정
   - [ ] Vercel을 이용해 프로젝트 배포
+
+---
+
+Dex에서 MyPokemon 이랑 SetMyPokemon이 어디서 쓰이고 있는지 확인하고
+AddMyPokemon이랑 RemoveMyPokemon 코드 다시 짜기
+MyPokemon이 어떤 역할을 하는지 잘 생각해봐야 방향성 잡기 쉬움
