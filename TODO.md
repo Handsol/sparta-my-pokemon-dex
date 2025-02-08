@@ -38,11 +38,11 @@
   - [v] 포켓몬카드 클릭 시 상세 정보 표시
   - [v] 상세정보에서 이전 페이지로 돌아가는 "뒤로가기" 버튼 추가
 
-- [ ] Context API 적용
+- [v] Context API 적용
 
-  - [ ] PokemonContext 컴포넌트 만들기
-  - [ ] addPokemon, removePokemon 함수를 Context API로 관리
-  - [ ] prop drilling 없애고 전역 상태 관리 구현
+  - [v] PokemonContext 컴포넌트 만들기
+  - [v] addPokemon, removePokemon 함수를 Context API로 관리
+  - [v] prop drilling 없애고 전역 상태 관리 구현
 
 - [ ] 전체 UI 일관성 맞추기
 

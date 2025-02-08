@@ -1,7 +1,10 @@
-import styled from "styled-components";
+import { usePokemon } from "../context/PokemonContext";
 import PokemonCard from "./PokemonCard";
+import styled from "styled-components";
 
-const PokemonList = ({ pokemonList, addMyPokemon }) => {
+const PokemonList = () => {
+  const { pokemonList, addMyPokemon } = usePokemon();
+
   return (
     <PokemonListContainer>
       {pokemonList.map((pokemon) => (
