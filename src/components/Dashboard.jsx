@@ -40,10 +40,11 @@ const DashboardContainer = styled.div`
 
   width: 100%;
   max-width: 1200px;
-  height: 300px;
+  min-height: 300px;
   border: 1px solid #e2e2e2;
   border-radius: 10px;
   margin: 0 auto;
+  box-sizing: border-box;
 
   background-color: #f1f3f5;
 `;
@@ -54,6 +55,7 @@ const DashboardTitle = styled.h1`
   justify-content: center;
   align-items: center;
   font-size: 24px;
+  padding-top: 30px;
 
   color: #333;
 `;
@@ -61,17 +63,18 @@ const DashboardTitle = styled.h1`
 const DashboardContent = styled.div`
   flex: 2;
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+  padding: 5%;
+  width: 100%;
 
-  gap: 20px;
+  grid-gap: 10px;
 `;
 
 const EmptyPokemon = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 110px;
-  height: 180px;
+  height: 190px;
 
   background-color: white;
   border-radius: 10px;
@@ -80,6 +83,7 @@ const EmptyPokemon = styled.div`
   overflow: hidden;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s, box-shadow 0.2s;
+  border: 2px dashed #ccc;
 
   img {
     width: 50px;
