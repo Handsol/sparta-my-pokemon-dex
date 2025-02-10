@@ -44,9 +44,9 @@
   - [v] addPokemon, removePokemon 함수를 Context API로 관리
   - [v] prop drilling 없애고 전역 상태 관리 구현
 
-- [ ] 전체 UI 일관성 맞추기
+- [v] 전체 UI 일관성 맞추기
 
-  - [ ] 포켓몬 카드와 대시보드 스타일링
+  - [v] 포켓몬 카드와 대시보드 스타일링
 
 - [ ] RTK 적용
 
@@ -63,6 +63,4 @@
 
 ---
 
-Dex에서 MyPokemon 이랑 SetMyPokemon이 어디서 쓰이고 있는지 확인하고
-AddMyPokemon이랑 RemoveMyPokemon 코드 다시 짜기
-MyPokemon이 어떤 역할을 하는지 잘 생각해봐야 방향성 잡기 쉬움
+리덕스..
