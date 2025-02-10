@@ -1,10 +1,12 @@
 import "./App.css";
-import { PokemonProvider } from "./context/PokemonContext";
 import Router from "./shared/Router";
+import { ToastContainer } from "react-toastify";
+import { PokemonProvider } from "./context/PokemonContext";
 
 function App() {
   return (
     <PokemonProvider>
+      <ToastContainer />
       <Router />
     </PokemonProvider>
   );
