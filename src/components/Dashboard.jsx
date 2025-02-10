@@ -55,6 +55,7 @@ const DashboardTitle = styled.h1`
   justify-content: center;
   align-items: center;
   font-size: 24px;
+  padding-top: 30px;
 
   color: #333;
 `;
@@ -73,6 +74,7 @@ const EmptyPokemon = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 190px;
 
   background-color: white;
   border-radius: 10px;
