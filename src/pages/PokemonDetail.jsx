@@ -32,12 +32,6 @@ const PokemonDetail = () => {
       <p>No. {pokemonId}</p>
       <p>타입: {pokemon.types.join(", ")}</p>
       <p>{pokemon.description}</p>
-      {/* <AddPokemonButton onClick={() => addMyPokemon(pokemon.id)}>
-        추가
-      </AddPokemonButton>
-      <RemovePokemonButton onClick={() => removeMyPokemon(pokemon.id)}>
-        제거
-      </RemovePokemonButton> */}
       {alreadyExists ? (
         <RemovePokemonButton onClick={() => removeMyPokemon(pokemon.id)}>
           제거
