@@ -1,15 +1,26 @@
-import MOCK_DATA from "../data/MockData";
 import styled from "styled-components";
 import { useNavigate, useParams } from "react-router-dom";
+import { usePokemon } from "../context/PokemonContext";
 
 const PokemonDetail = () => {
   const { id } = useParams();
   const navigate = useNavigate();
+  const { myPokemon, pokemonList, addMyPokemon, removeMyPokemon } =
+    usePokemon();
 
-  const pokemon = MOCK_DATA.find((pokemon) => pokemon.id === parseInt(id));
+  // 선택한 포켓몬을 id를 통해 pokemonList(MOCK_DATA)에서 검색
+  const pokemon = pokemonList.find((pokemon) => pokemon.id === parseInt(id));
 
+  // 포켓몬 넘버가 3자리수로 출력되도록 설정
   const pokemonId = String(pokemon.id).padStart(3, "0");
 
+  // 이미 선택된 포켓몬인지 확인
+  const checkPokemon = pokemon.id;
+  const alreadyExists = myPokemon.some(
+    (pokemon) => pokemon.id === checkPokemon
+  );
+
+  // 돌아가기 버튼을 누르면 전 페이지로 이동
   const handleGoBack = () => {
     navigate(-1);
   };
@@ -21,6 +32,21 @@ const PokemonDetail = () => {
       <p>No. {pokemonId}</p>
       <p>타입: {pokemon.types.join(", ")}</p>
       <p>{pokemon.description}</p>
+      {/* <AddPokemonButton onClick={() => addMyPokemon(pokemon.id)}>
+        추가
+      </AddPokemonButton>
+      <RemovePokemonButton onClick={() => removeMyPokemon(pokemon.id)}>
+        제거
+      </RemovePokemonButton> */}
+      {alreadyExists ? (
+        <RemovePokemonButton onClick={() => removeMyPokemon(pokemon.id)}>
+          제거
+        </RemovePokemonButton>
+      ) : (
+        <AddPokemonButton onClick={() => addMyPokemon(pokemon.id)}>
+          추가
+        </AddPokemonButton>
+      )}
       <GoBackButton onClick={handleGoBack}>뒤로 가기</GoBackButton>
     </PokemonDetailContainer>
   );
@@ -38,6 +64,29 @@ const PokemonDetailContainer = styled.div`
   width: 100vw;
 
   background-color: #ffffcc;
+`;
+const AddPokemonButton = styled.button`
+  background-color: #f1f3f5;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #ff9900;
+  }
+`;
+
+const RemovePokemonButton = styled.button`
+  background-color: #ccc;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #ff9900;
+  }
 `;
 
 const GoBackButton = styled.button`

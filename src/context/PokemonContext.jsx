@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import pokemonList from "../data/MockData";
 import "react-toastify/dist/ReactToastify.css";
@@ -6,7 +6,14 @@ import "react-toastify/dist/ReactToastify.css";
 export const PokemonContext = createContext();
 
 export const PokemonProvider = ({ children }) => {
-  const [myPokemon, setMyPokemon] = useState([]);
+  // 포켓몬 리스트를 로컬스토리지에 파싱
+  const [myPokemon, setMyPokemon] = useState(
+    JSON.parse(localStorage.getItem("myPokemon")) || []
+  );
+
+  useEffect(() => {
+    localStorage.setItem("myPokemon", JSON.stringify(myPokemon));
+  }, [myPokemon]);
 
   // 포켓몬리스트 -> 대쉬보드 포켓몬 추가
   const addMyPokemon = (pokemonId) => {

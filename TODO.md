@@ -48,18 +48,15 @@
 
   - [v] 포켓몬 카드와 대시보드 스타일링
 
-- [ ] RTK 적용
+- [v] UI 라이브러리를 사용한 alert(modal) 구현
 
-  - [ ] PokemonContext 부분을 RTK로 새롭게 구성한 store로 대체
+  - [v] 외부 라이브러리(react-toastify, sweetalert2, sooner) 활용
 
 - [ ] 데이터 유지 기능 구현
-- [ ] UI 라이브러리를 사용한 alert(modal) 구현
 
-  - [ ] 외부 라이브러리(react-toastify, sweetalert2, sooner) 활용
-
-- [ ] 검토 및 배포
-  - [ ] UI의 전체적인 디자인 수정
-  - [ ] Vercel을 이용해 프로젝트 배포
+- [v] 검토 및 배포
+  - [v] UI의 전체적인 디자인 수정
+  - [v] Vercel을 이용해 프로젝트 배포
 
 ---
 
